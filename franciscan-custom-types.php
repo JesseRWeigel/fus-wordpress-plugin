@@ -1232,6 +1232,40 @@ function create_new_type() {
 		)
 	);
 
+											// Create Graduate Program type
+	// set up labels
+	$labels = array(
+		'name' => 'Graduate Programs',
+			'singular_name' => 'Graduate Program',
+			'add_new' => 'Add New Graduate Program',
+			'add_new_item' => 'Add New Graduate Program',
+			'edit_item' => 'Edit Graduate Program',
+			'new_item' => 'New Graduate Program',
+			'all_items' => 'All Graduate Programs',
+			'view_item' => 'View Graduate Program',
+			'search_items' => 'Search Graduate Programs',
+			'not_found' =>  'No Graduate Programs Found',
+			'not_found_in_trash' => 'No Graduate Programs found in Trash',
+			'parent_item_colon' => '',
+			'menu_name' => 'Graduate Programs',
+		);
+		//register post type
+	register_post_type( 'graduate-program', array(
+		'labels' => $labels,
+		'has_archive' => true,
+		'public' => true,
+		'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail'),
+		'exclude_from_search' => false,
+		'capability_type' => 'post',
+		'rewrite' => array( 'slug' => 'graduate-programs' ),
+		'show_in_rest'       => true,
+    'show_in_menu'       => true,
+    'show_in_graphql' => true,
+    'graphql_single_name' => 'graduateProgram',
+    'graphql_plural_name' => 'graduatePrograms',
+		)
+	);
+
 	
 	
 }
