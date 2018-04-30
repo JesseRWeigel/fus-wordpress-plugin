@@ -1198,6 +1198,40 @@ function create_new_type() {
 		)
 	);
 
+										// Create Theatre Page type
+	// set up labels
+	$labels = array(
+		'name' => 'Theatre Pages',
+			'singular_name' => 'Theatre Page',
+			'add_new' => 'Add New Theatre Page',
+			'add_new_item' => 'Add New Theatre Page',
+			'edit_item' => 'Edit Theatre Page',
+			'new_item' => 'New Theatre Page',
+			'all_items' => 'All Theatre Pages',
+			'view_item' => 'View Theatre Page',
+			'search_items' => 'Search Theatre Pages',
+			'not_found' =>  'No Theatre Pages Found',
+			'not_found_in_trash' => 'No Theatre Pages found in Trash',
+			'parent_item_colon' => '',
+			'menu_name' => 'Theatre Pages',
+		);
+		//register post type
+	register_post_type( 'theatre-page', array(
+		'labels' => $labels,
+		'has_archive' => true,
+		'public' => true,
+		'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail'),
+		'exclude_from_search' => false,
+		'capability_type' => 'post',
+		'rewrite' => array( 'slug' => 'theatre-pages' ),
+		'show_in_rest'       => true,
+    'show_in_menu'       => true,
+    'show_in_graphql' => true,
+    'graphql_single_name' => 'theatrePage',
+    'graphql_plural_name' => 'theatrePages',
+		)
+	);
+
 	
 	
 }
