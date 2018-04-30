@@ -1308,7 +1308,7 @@ function create_topics_hierarchical_taxonomy() {
 
 // // Now register the taxonomy
 //
-  register_taxonomy('faculty-departments',array('faculty', 'major', 'department', 'minor', 'video', 'event', 'student-profile-page'), array(
+  register_taxonomy('faculty-departments',array('faculty', 'major', 'department', 'minor', 'video', 'event', 'student-profile-page', 'graduate-program'), array(
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
