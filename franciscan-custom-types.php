@@ -1266,6 +1266,40 @@ function create_new_type() {
 		)
 	);
 
+	// Create SASS Page type
+	// set up labels
+	$labels = array(
+		'name' => 'SASS Pages',
+			'singular_name' => 'SASS Page',
+			'add_new' => 'Add New SASS Page',
+			'add_new_item' => 'Add New SASS Page',
+			'edit_item' => 'Edit SASS Page',
+			'new_item' => 'New SASS Page',
+			'all_items' => 'All SASS Pages',
+			'view_item' => 'View SASS Page',
+			'search_items' => 'Search SASS Pages',
+			'not_found' =>  'No SASS Pages Found',
+			'not_found_in_trash' => 'No SASS Pages found in Trash',
+			'parent_item_colon' => '',
+			'menu_name' => 'SASS Pages',
+		);
+		//register post type
+	register_post_type( 'sass-page', array(
+		'labels' => $labels,
+		'has_archive' => true,
+		'public' => true,
+		'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail'),
+		'exclude_from_search' => false,
+		'capability_type' => 'post',
+		'rewrite' => array( 'slug' => 'sass-pages' ),
+		'show_in_rest'       => true,
+    'show_in_menu'       => true,
+    'show_in_graphql' => true,
+    'graphql_single_name' => 'sassPage',
+    'graphql_plural_name' => 'sassPages',
+		)
+	);
+
 	
 	
 }
