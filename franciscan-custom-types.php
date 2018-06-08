@@ -1342,7 +1342,7 @@ function create_topics_hierarchical_taxonomy() {
 
 // // Now register the taxonomy
 //
-  register_taxonomy('faculty-departments',array('faculty', 'major', 'department', 'minor', 'video', 'event', 'student-profile-page', 'graduate-program'), array(
+  register_taxonomy('faculty-departments',array('faculty', 'major', 'department', 'minor', 'video', 'event', 'student-profile-page', 'graduate-program', 'job'), array(
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
@@ -1409,7 +1409,7 @@ function create_topics_hierarchical_taxonomy() {
 
 // // Now register the taxonomy
 //
-  register_taxonomy('staff-departments',array('staff-member'), array(
+  register_taxonomy('staff-departments',array('staff-member', 'job'), array(
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
@@ -1423,6 +1423,39 @@ function create_topics_hierarchical_taxonomy() {
     'show_in_graphql' => true,
 		'graphql_single_name' => 'staffDepartment',
 		'graphql_plural_name' => 'staffDepartments',
+	));
+
+			// Job Category
+	  $labels = array(
+    'name' => _x( 'Job Category', 'taxonomy general name' ),
+    'singular_name' => _x( 'Job Category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Job Category' ),
+    'all_items' => __( 'All Job Category' ),
+    'parent_item' => __( 'Parent Job Category' ),
+    'parent_item_colon' => __( 'Parent Job Category:' ),
+    'edit_item' => __( 'Edit Job Category' ),
+    'update_item' => __( 'Update Job Category' ),
+    'add_new_item' => __( 'Add New Job Category' ),
+    'new_item_name' => __( 'New Job Category Name' ),
+    'menu_name' => __( 'Job Category' ),
+  );
+
+// // Now register the taxonomy
+//
+  register_taxonomy('job-categories',array('job'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'job-category' ),
+    'show_in_menu'       => true,
+    'show_in_rest'       => true,
+		'rest_base'          => 'job-category',
+    'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_graphql' => true,
+		'graphql_single_name' => 'jobCategory',
+		'graphql_plural_name' => 'jobCategories',
 	));
 	
 			// Household Type Category
