@@ -1232,6 +1232,40 @@ function create_new_type() {
 		)
 	);
 
+											// Create Gallery type
+	// set up labels
+	$labels = array(
+		'name' => 'Galleries',
+			'singular_name' => 'Gallery',
+			'add_new' => 'Add New Gallery',
+			'add_new_item' => 'Add New Gallery',
+			'edit_item' => 'Edit Gallery',
+			'new_item' => 'New Gallery',
+			'all_items' => 'All Galleries',
+			'view_item' => 'View Gallery',
+			'search_items' => 'Search Galleries',
+			'not_found' =>  'No Galleries Found',
+			'not_found_in_trash' => 'No Galleries found in Trash',
+			'parent_item_colon' => '',
+			'menu_name' => 'Galleries',
+		);
+		//register post type
+	register_post_type( 'gallery', array(
+		'labels' => $labels,
+		'has_archive' => true,
+		'public' => true,
+		'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail'),
+		'exclude_from_search' => false,
+		'capability_type' => 'post',
+		'rewrite' => array( 'slug' => 'galleries' ),
+		'show_in_rest'       => true,
+    'show_in_menu'       => true,
+    'show_in_graphql' => true,
+    'graphql_single_name' => 'gallery',
+    'graphql_plural_name' => 'galleries',
+		)
+	);
+
 											// Create Graduate Program type
 	// set up labels
 	$labels = array(
