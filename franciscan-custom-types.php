@@ -1376,7 +1376,7 @@ function create_topics_hierarchical_taxonomy() {
 
 // // Now register the taxonomy
 //
-  register_taxonomy('faculty-departments',array('faculty', 'major', 'department', 'minor', 'video', 'event', 'student-profile-page', 'graduate-program', 'job'), array(
+  register_taxonomy('faculty-departments',array('faculty', 'major', 'department', 'minor', 'video', 'event', 'student-profile-page', 'graduate-program', 'job', 'gallery', 'cta'), array(
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
@@ -1410,7 +1410,7 @@ function create_topics_hierarchical_taxonomy() {
 
 // // Now register the taxonomy
 //
-  register_taxonomy('institute-names',array('institute'), array(
+  register_taxonomy('institute-names',array('institute', 'gallery', 'cta', 'video'), array(
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
@@ -1443,7 +1443,7 @@ function create_topics_hierarchical_taxonomy() {
 
 // // Now register the taxonomy
 //
-  register_taxonomy('staff-departments',array('staff-member', 'job'), array(
+  register_taxonomy('staff-departments',array('staff-member', 'job', 'gallery', 'cta', 'video'), array(
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
