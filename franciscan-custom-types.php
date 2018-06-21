@@ -518,6 +518,40 @@ function create_new_type() {
 		)
 	);
 
+					// Create FMS Page type
+	// set up labels
+	$labels = array(
+		'name' => 'FMS Pages',
+			'singular_name' => 'FMS Page',
+			'add_new' => 'Add New FMS Page',
+			'add_new_item' => 'Add New FMS Page',
+			'edit_item' => 'Edit FMS Page',
+			'new_item' => 'New FMS Page',
+			'all_items' => 'All FMS Pages',
+			'view_item' => 'View FMS Page',
+			'search_items' => 'Search FMS Pages',
+			'not_found' =>  'No FMS Pages Found',
+			'not_found_in_trash' => 'No FMS Pages found in Trash',
+			'parent_item_colon' => '',
+			'menu_name' => 'FMS Pages',
+		);
+		//register post type
+	register_post_type( 'fms-page', array(
+		'labels' => $labels,
+		'has_archive' => true,
+		'public' => true,
+		'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail'),
+		'exclude_from_search' => false,
+		'capability_type' => 'post',
+		'rewrite' => array( 'slug' => 'fms-pages' ),
+		'show_in_rest'       => true,
+    'show_in_menu'       => true,
+    'show_in_graphql' => true,
+    'graphql_single_name' => 'fmsPage',
+    'graphql_plural_name' => 'fmsPages',
+		)
+	);
+
 					// Create Chapel Page type
 	// set up labels
 	$labels = array(
