@@ -1303,7 +1303,7 @@ function create_new_type() {
 	// Create Menu type
 	// set up labels
 	$labels = array(
-		'name' => 'menus',
+		'name' => 'Menus',
 			'singular_name' => 'Menu',
 			'add_new' => 'Add New Menu',
 			'add_new_item' => 'Add New Menu',
