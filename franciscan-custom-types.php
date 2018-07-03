@@ -1300,6 +1300,40 @@ function create_new_type() {
 		)
 	);
 
+	// Create Menu type
+	// set up labels
+	$labels = array(
+		'name' => 'menus',
+			'singular_name' => 'Menu',
+			'add_new' => 'Add New Menu',
+			'add_new_item' => 'Add New Menu',
+			'edit_item' => 'Edit Menu',
+			'new_item' => 'New Menu',
+			'all_items' => 'All menus',
+			'view_item' => 'View Menu',
+			'search_items' => 'Search menus',
+			'not_found' =>  'No menus Found',
+			'not_found_in_trash' => 'No menus found in Trash',
+			'parent_item_colon' => '',
+			'menu_name' => 'menus',
+		);
+		//register post type
+	register_post_type( 'menu', array(
+		'labels' => $labels,
+		'has_archive' => true,
+		'public' => true,
+		'supports' => array( 'title', 'editor' ),
+		'exclude_from_search' => false,
+		'capability_type' => 'post',
+		'rewrite' => array( 'slug' => 'menus' ),
+		'show_in_rest'       => true,
+    'show_in_menu'       => true,
+    'show_in_graphql' => true,
+    'graphql_single_name' => 'menu',
+    'graphql_plural_name' => 'menus',
+		)
+	);
+
 											// Create Graduate Program type
 	// set up labels
 	$labels = array(
