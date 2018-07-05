@@ -1309,13 +1309,13 @@ function create_new_type() {
 			'add_new_item' => 'Add New Menu',
 			'edit_item' => 'Edit Menu',
 			'new_item' => 'New Menu',
-			'all_items' => 'All menus',
+			'all_items' => 'All Menus',
 			'view_item' => 'View Menu',
-			'search_items' => 'Search menus',
-			'not_found' =>  'No menus Found',
-			'not_found_in_trash' => 'No menus found in Trash',
+			'search_items' => 'Search Menus',
+			'not_found' =>  'No Menus Found',
+			'not_found_in_trash' => 'No Menus found in Trash',
 			'parent_item_colon' => '',
-			'menu_name' => 'menus',
+			'menu_name' => 'Menus',
 		);
 		//register post type
 	register_post_type( 'menu', array(
