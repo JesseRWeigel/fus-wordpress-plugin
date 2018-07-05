@@ -1334,6 +1334,40 @@ function create_new_type() {
 		)
 	);
 
+		// Create Sample Course type
+	// set up labels
+	$labels = array(
+		'name' => 'Sample Courses',
+			'singular_name' => 'Sample Course',
+			'add_new' => 'Add New Sample Course',
+			'add_new_item' => 'Add New Sample Course',
+			'edit_item' => 'Edit Sample Course',
+			'new_item' => 'New Sample Course',
+			'all_items' => 'All Sample Courses',
+			'view_item' => 'View Sample Course',
+			'search_items' => 'Search Sample Courses',
+			'not_found' =>  'No Sample Courses Found',
+			'not_found_in_trash' => 'No Sample Courses found in Trash',
+			'parent_item_colon' => '',
+			'menu_name' => 'Sample Courses',
+		);
+		//register post type
+	register_post_type( 'sample-course', array(
+		'labels' => $labels,
+		'has_archive' => true,
+		'public' => true,
+		'supports' => array( 'title', 'editor' ),
+		'exclude_from_search' => false,
+		'capability_type' => 'post',
+		'rewrite' => array( 'slug' => 'sample-courses' ),
+		'show_in_rest'       => true,
+    'show_in_menu'       => true,
+    'show_in_graphql' => true,
+    'graphql_single_name' => 'sampleCourse',
+    'graphql_plural_name' => 'sampleCourses',
+		)
+	);
+
 											// Create Graduate Program type
 	// set up labels
 	$labels = array(
@@ -1639,6 +1673,36 @@ add_action( 'rest_api_init', function() {
 		
 	});
 }, 15 );
+
+// add_action('graphql_links_fields', function($fields) {
+// // create a new type representing each row in a repeater
+//         $linksType = new ObjectType([
+//         'name' => 'Link',
+// // description for graphql docs
+//         'description' => __( 'One link row', 'your-textdomain' ), 
+//         'fields' => [  // define your fields
+//              'linkUrl' => [
+//                               'type' => \WPGraphQL\Types::string(),
+//                         ],
+//              'linkName' => [
+//                               'type' => \WPGraphQL\Types::string(),
+//                         ],
+// 	     ]
+//         ]);
+// // define the field containing your repeater
+//         $fields[ 'links' ] = [ 
+// // return a list, because repeaters are lists :p
+//         'type' => Type::listOf($linksType), 
+//         'description' => __( 'Links field in GraphQL', 'your-textdomain' ),
+//         'resolve' => function( \WP_Post $post ) {
+//             $link = get_field( 'links', $post->ID );
+//             return ! empty( $link ) ? $link : null;
+//         },
+//         ];
+//         return $fields;
+// },99 );
+
+
 
 
 ?>
